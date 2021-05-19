@@ -1,0 +1,66 @@
+
+========================= ダウンロード ========================= 
+
+
+・postgreSQLダウンロードサイト
+
+	https://www.postgresql.jp/download
+
+
+・postgreSQL JDBCドライバーダウンロードサイト
+
+	https://jdbc.postgresql.org/download.html
+
+
+
+=========================    ログイン   =========================
+
+
+・SQL Shell を起動
+
+↓
+
+・パスワード入力
+
+	（postgreSQLダウンロード時、登録したパスワード）
+
+
+
+=========================   ユーザ作成   =========================
+
+
+・ユーザ作成
+
+	CREATE USER [username] PASSWORD [password] CREATEDB;
+
+
+・登録ユーザに接続
+
+	¥c postgres [username]
+
+
+
+======================   データベース作成   =======================
+
+
+・データベース作成
+
+	CREATE DATABASE [databasename];
+
+
+・作成したデータベースに接続
+
+	¥c [databasename]
+
+
+
+======================     テーブル作成     ======================= 
+
+
+・テーブル作成
+
+	CREATE TABLE [tablename] (
+
+		
+
+	)
