@@ -1,0 +1,216 @@
+==================== SELECT文 ==================== 
+
+
+SELECT [column], [column] …… from [table name];
+
+
+	・テーブルの中の情報を取得できる
+	・[column]の箇所を*にすると全てのカラムを出力できる
+
+
+
+==================== WHERE文 ====================
+
+
+SELECT [column] …… from [table name] WHERE [column] = 'value';
+
+
+	・WHEREを使用して取得したい値に条件を合致させた値のみを取得可能
+
+
+
+==================== INSERT文 ====================
+
+
+INSERT INTO [table name] VALUES (column1 value, column2 value, column3 value ……);
+
+	・１つのレコードに値を入れる
+
+
+INSERT INTO [table name] VALUES (
+	[column1 value],
+	[column2 value],
+	[column3 value],
+	.
+	.
+	.
+);
+
+	・複数のレコードに同時に値を入れる
+
+
+INSERT INTO [table name] ([column1], [column2], ……) VALUES (column1 value, column2 value ……);
+
+	・情報を追加するカラムを指定して値を入れることが出来る
+
+
+
+==================== UPDATE文 ====================
+
+
+UPDATE [table name] SET [column] = 'new value', [column] = 'new value' ……;
+
+	・値を更新することが出来る
+	・上記の方法だと指定したカラム全体の値がnew valueになってしまう。
+
+
+UPDATE [table name] SET [column] = 'new value' WHERE [column] = ' value';
+
+	・WHEREを使用して値を変えたい箇所を指定
+
+
+
+==================== DELETE文 ====================
+
+
+DELETE FROM [table name];
+
+	・テーブルの値を削除できる
+	・上記の方法だとすべての値が消えてしまう
+
+
+DELETE FROM [table name] WHERE [column] = 'value';
+
+	・WHEREを使用することで特定の値のみを消すことが可能
+	・必ずWHEREを使う
+
+
+
+==================== AND / OR ====================
+
+
+SELECT * FROM [table name] WHERE [column1] = 'value1' AND [column2] = 'value2';
+
+	・column1かつcolumn2の値に条件が一致するものを取得
+
+
+SELECT * FROM [table name] WHERE [column1] = 'value1' OR [column2] = 'value2';
+
+	・column1またはcolumn2の値に条件が一致するものを取得
+
+
+
+==================== LIKE ====================
+
+
+SELECT * FROM [table name] WHERE [column] LIKE 'a%';
+
+	・columnの値がaから始まるものを取得
+
+
+
+====================  IN  ====================
+
+
+SELECT * FROM [table name] WHERE [column] IN (1, 2);
+
+	・上記の場合[column]の値が1か2の[table name]の値を取得
+
+
+
+====================  BETWEEN  ====================
+
+
+SELECT * FROM [table name] WHERE [column] BETWEEN 1 AND 10;
+
+	・[column]の値が1から10の範囲の値を取得
+
+
+
+====================  DISTINCT  ====================
+
+
+SELECT DISTINCT [column] FROM [table name];
+
+	・[column]を重複しているものを1つにまとめて表示
+
+
+
+====================  COUNT  ====================
+
+
+SELECT COUNT(*) FROM [table name];
+
+	・レコードの合計数を取得
+
+
+
+====================  SUM  ====================
+
+
+SELECT SUM(column) FROM [table name];
+
+	・columnの値の合計値を取得
+
+
+
+====================  MAX  ====================
+
+
+SELECT MAX(column) FROM [table name];
+
+	・columnの値の最大値を取得
+
+
+
+====================  MIN  ====================
+
+
+SELECT MIN(column) FROM [table name];
+
+	・columnの値の最小値を取得
+
+
+
+====================  MIN  ====================
+
+
+SELECT AVG(column) FROM [table name];
+
+	・columnの値の平均を取得
+
+
+
+====================  GROUP BY  ====================
+
+
+SELECT [column1], SUM(column2) FROM [table name] GROUP BY [column1];
+
+	・列をグループ化
+	・column1の値ごとにcolumn2の合計値を取得
+
+
+
+====================  HAVING  ====================
+
+SELECT column1 FROM [table name] GROUP BY column1 HAVING SUM(column2) > 'value';
+
+	・　column2の値がvalueより大きいcolumn1の値を取得
+
+
+
+====================  ORDER BY  ====================
+
+SELECT * FROM [table name] ORDER BY column ASC;
+
+	・[table name]のすべての列をcolumnの昇順に出力
+	・DESC → 降順
+	・ASC  → 昇順
+	・省略した場合はASCが適用される
+
+
+
+====================  AS  ====================
+
+SELECT t.column1 AS col1, t.column2 AS col2 FROM [table name] AS t;
+
+	・ASを使って別名を付け、記述を短くする。
+
+
+
+====================  JOIN  ====================
+
+SELECT column1, column2 FROM [table1] JOIN [table2] ON [table1].column3 = [table2].column3; 
+
+	・JOINを使用して2つのテーブルを結合
+	・ONの後に参照する列を指定し、該当する値を表示
