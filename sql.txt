@@ -8,6 +8,20 @@ SELECT [column], [column] …… from [table name];
 	・[column]の箇所を*にすると全てのカラムを出力できる
 
 
+〜基本構文〜
+
+	SELECT     [列名]
+	FROM       [テーブル名]
+	JOIN       [テーブル名 ON 結合条件]
+	WHERE      [抽出条件]
+	GROUP BY   [列名]
+	HAVING     [グループ抽出条件]
+	ORDER BY   [列名]
+
+	・順番を入れ替えることはできない
+	・条件の設定はこの順番で行う　
+
+
 
 ==================== WHERE文 ====================
 
